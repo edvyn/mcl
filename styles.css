@@ -1181,7 +1181,6 @@
 
 .solucao-section{
     padding:100px 20px;
-    padding-top:20px;
 }
 
 .solucao-section .section-label{
@@ -1618,7 +1617,7 @@
 }
 
 .bonus-img img{
-  max-width:400px;
+  max-width:300px;
   border-radius:20px;
 }
 
