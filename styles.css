@@ -1072,22 +1072,43 @@
 }
 
 .fechamento-icone{
-    flex-shrink:0;
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    border:2px solid #ff8989;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:2px;
+    position: relative;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ff8989;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
 }
 
 .fechamento-icone span{
-    width:8px;
-    height:8px;
-    background:#ff8989;
-    border-radius:50%;
+    position: relative;
+    width: 12px;
+    height: 12px;
+}
+
+.fechamento-icone span::before,
+.fechamento-icone span::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 2px;
+    background: #ff8989;
+    border-radius: 2px;
+    transform-origin: center;
+}
+
+.fechamento-icone span::before{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.fechamento-icone span::after{
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .fechamento-item p{
@@ -1186,7 +1207,7 @@
 .solucao-section .section-label{
     color:#b38e4c;
     letter-spacing:4px;
-    font-size:12px;
+    font-size:24px;
     text-transform:uppercase;
     margin-bottom:100px;
 }
@@ -2032,42 +2053,58 @@
     margin-bottom: 28px;
   }
  
-  .sobre-facts {
+.sobre-facts {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    margin-top: 36px;
-  }
- 
-  .fact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
- 
-  .fact-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--dourado);
-    margin-top: 5px;
-    flex-shrink: 0;
-  }
- 
-  .fact-text {
+    margin-bottom: 36px;
+}
+
+.fact-item{
+    position:relative;
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    background:#fcf4e7;
+    padding:16px 18px 16px 24px;
+    box-shadow: inset 0 0 0 1px rgba(212,181,106,.18), 0 10px 30px rgba(38,52,38,.08);
+    border-radius:14px;
+    overflow:hidden;
+}
+
+/* Barra decorativa em toda a altura */
+.fact-item::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:6px;
+    background:linear-gradient(
+        180deg,
+        var(--verde-oliva) 0%,
+        var(--verde-oliva) 100%
+    );
+    border-radius:0 999px 999px 0;
+}
+
+.fact-dot{
+    display:none;
+}
+
+.fact-text {
     font-family: 'Lato', sans-serif;
     font-size: 13px;
     color: #666;
     line-height: 1.5;
-  }
- 
-  .fact-text strong {
+}
+
+.fact-text strong {
     display: block;
     color: var(--verde-oliva);
-    font-weight: 700;
-    margin-bottom: 2px;
-  }
- 
+    font-weight: 800;
+    margin-bottom: 4px;
+}
 
 /* =====================================================
    ANTES / DEPOIS
@@ -2231,7 +2268,7 @@
 
 .antes-col{
 
-    background:#faf9f7;
+    background:#a35757;
 
 }
 
@@ -2263,7 +2300,13 @@
 
 .depois-col .col-header{
 
-    border-bottom:1px solid rgba(255,255,255,.12);
+    border-bottom:1px solid rgba(255, 255, 255, 0.301);
+
+}
+
+.antes-col .col-header{
+
+    border-bottom:1px solid rgba(255, 255, 255, 0.315);
 
 }
 
@@ -2289,7 +2332,7 @@
 
     background:#ece8e2;
 
-    color:#8b8b8b;
+    color:#d88888;
 
 }
 
@@ -2309,7 +2352,7 @@
 
     font-size:2rem;
 
-    color:var(--verde-oliva);
+    color:#ffffff;
 
 }
 
@@ -2327,7 +2370,7 @@
 
     font-size:.9rem;
 
-    color:#777;
+    color:#ffffff;
 
 }
 
@@ -2367,7 +2410,7 @@
 
 .antes-item span:last-child{
 
-    color:#666;
+    color:#ffffff;
 
 }
 
@@ -2408,7 +2451,7 @@
 
     background:#ebe7e1;
 
-    color:#8d8d8d;
+    color:#e08686;
 
 }
 
@@ -2490,11 +2533,11 @@
 
     font-family:'Lato',sans-serif;
 
-    font-size:1.08rem;
+    font-size:1.2rem;
 
-    line-height:1.8;
+    line-height:1.5;
 
-    color:#666;
+    color:#0f0f0f;
 
 }
 
@@ -3257,7 +3300,7 @@
 
     background:#EDE5D7;
 
-    color:#55624A;
+    color:#cc5f5f;
 
     border-radius:50px;
 
@@ -3339,7 +3382,7 @@
 
     background:
 
-    linear-gradient(135deg,#55624A,#43513A);
+    linear-gradient(135deg,#b44545,#cc5f5f);
 
     color:#fff;
 
