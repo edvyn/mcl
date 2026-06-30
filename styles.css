@@ -1181,7 +1181,7 @@
 
 .solucao-section{
     padding:100px 20px;
-    padding-top:80px;
+    padding-top:20px;
 }
 
 .solucao-section .section-label{
@@ -1863,7 +1863,7 @@
 
 /* texto */
 .planilha-card h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'lato', sans-serif;
   font-size: 28px;
   margin-bottom: 15px;
   color: #f5f1e8;
@@ -1936,6 +1936,11 @@
 
   .planilhas-title {
     font-size: 32px;
+  }
+
+  .planilhas-section{
+    padding:15px;
+    padding-top:40px;
   }
 
   .planilha-mockup {
